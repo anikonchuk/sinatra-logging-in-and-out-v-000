@@ -7,7 +7,12 @@
   </head>
   <body id="page-top">
     <a href="/logout">Log Out</a>
-    
+    <% if is_logged_in?(session) %>
+      <h1>Welcome <%= current_user %></h1>
+      <p>Your balance is <%= current_user.balance %></p>
+    <% else %>
+      <a href="/">Return to the home page</a>
+    <% end %>
 
   </body>
 </html>
